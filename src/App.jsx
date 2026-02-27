@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Header from "./components/Header/Header.jsx";
 import { createContext, useState } from "react";
-import GetRecipe from "./components/header/GetRecipe/GetRecipe";
-import Favorite from "./components/header/Favorite/Favorite";
+import GetRecipe from "./components/Header/GetRecipe/GetRecipe";
+import Favorite from "./components/Header/Favorite/Favorite";
 import { STORAGE_FAV_MEALS } from "./constants/Constants";
 
 export const searchContext = createContext();
