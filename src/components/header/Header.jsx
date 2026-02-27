@@ -8,7 +8,7 @@ function Header() {
   const navigator = useNavigate();
   return (
     <>
-    <div>
+    <div className="sticky top-0 z-100">
       <HeaderMain/>
     </div>
       <div className=" flex-col  w-full h-screen">

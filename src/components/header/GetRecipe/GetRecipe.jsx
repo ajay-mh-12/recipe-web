@@ -3,21 +3,30 @@ import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import HeaderMain from "../HeaderMain/HeaderMain";
 import favoriteIcon from "../../../assets/Images/love-favorite-heart-svgrepo-com.svg";
+import Loader from "../../Loader/Loader";
 
 function GetRecipe() {
   const { id } = useParams();
   const [getId, setGetId] = useState([]);
+  const [loading,setLoading] = useState(false)
 
   useEffect(() => {
     getProductId();
   }, [id]);
 
   async function getProductId() {
-    const res = await axios.get(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
-    );
+    try{
+      setLoading(true)
+      const res = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
+      );
     setGetId(res.data.meals[0]);
+  } catch (error) {
+    console.log("error fetching recipe:", error)
+  }finally {
+    setLoading(false)
   }
+}
   const ingredients = [];
   for (let i = 0; i < 20; i++) {
     const ingrdent = getId[`strIngredient${i}`];
@@ -26,10 +35,15 @@ function GetRecipe() {
       ingredients.push({ ingrdent, measure });
     }
   }
+  
   console.log(ingredients);
+
+  if(loading){
+    return <Loader/>
+  }
   return (
     <>
-      <div>
+      <div className="sticky top-0 z-100">
         <HeaderMain />
       </div>
       <div className=" flex flex-col justify-center p-10 bg-[#972e56] m-6 w-[100] h-full ">
@@ -45,7 +59,7 @@ function GetRecipe() {
           <img
             className="w-[100] size-auto rounded-2xl"
             src={getId.strMealThumb}
-            alt=""
+            alt={getId.strMeal}
           />
         </div>
         {ingredients.map((items, index) => (
