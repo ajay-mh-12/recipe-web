@@ -47,10 +47,10 @@ function GetRecipe() {
       <HeaderMain />
     </div>
 
-    <div className="pt-20 min-h-screen bg-[#b22235] p-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="pt-20 min-h-screen bg-[#d23333] p-6 ">
+      <div className="max-w-4xl mx-auto bg-[#f7c7c7] p-6 rounded">
 
-        <h1 className="text-center text-amber-200 font-semibold text-3xl mb-6">
+        <h1 className="text-center text-amber-600 font-semibold text-3xl mb-6">
           {getId.strCategory}
         </h1>
 
@@ -60,7 +60,7 @@ function GetRecipe() {
           </button>
 
           <img
-            className="w-full h-auto rounded-2xl outline-2 p-2"
+            className="w-full h-auto rounded-2xl p-2"
             src={getId.strMealThumb}
             alt={getId.strMeal}
           />
@@ -82,7 +82,7 @@ function GetRecipe() {
             Ingredient Instruction :
           </h3>
 
-          <p className="text-amber-50 whitespace-pre-line">
+          <p className="text-black whitespace-pre-line">
             {getId.strInstructions}
           </p>
         </div>

@@ -11,26 +11,26 @@ function ResultPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // 🔹 Fetch random meals on first load
-   async function getProducts() {
+  // // 🔹 Fetch random meals on first load
+  //  async function getProducts() {
   
 
-    try {
-      const requests = Array.from({ length: count }, () =>
-        axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
-      );
+  //   try {
+  //     const requests = Array.from({ length: count }, () =>
+  //       axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
+  //     );
 
-      const responses = await Promise.all(requests);
-      const meals = responses.map((res) => res.data.meals[0]);
+  //     const responses = await Promise.all(requests);
+  //     const meals = responses.map((res) => res.data.meals[0]);
 
-      setProducts(meals);
-    } catch (err) {
-      setError("Failed to load recipes");
-      setProducts([]);
-    } finally {
-      setLoading(false);
-    }
-  }
+  //     setProducts(meals);
+  //   } catch (err) {
+  //     setError("Failed to load recipes");
+  //     setProducts([]);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
   // 🔹 Fetch searched meals
   async function getProducts() {
@@ -55,20 +55,20 @@ function ResultPage() {
     getProducts(store);
   }, [store]);
 
-  async function getProducts() {
-    setLoading(true);
-    try {
-      const response = await axios.get(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${store}`,
-      );
-      console.log(response);
-      setProducts(response.data.meals);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function getProducts() {
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.get(
+  //       `https://www.themealdb.com/api/json/v1/1/search.php?s=${store}`,
+  //     );
+  //     console.log(response);
+  //     setProducts(response.data.meals);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
   // 🔹 Loader
   if (loading) {

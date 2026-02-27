@@ -1,10 +1,11 @@
 import searchImage from "../assets/Images/search-svgrepo-com (2).svg";
 import { useContext } from "react";
 import { inputContext, storeContext } from "../App";
+import { useNavigate } from "react-router-dom";
 function Search() {
   const {input,setInput} = useContext(inputContext);
   const {store,setStore} = useContext(storeContext)
-  
+  const navigate = useNavigate()
 
 
   function handleChange(e) {
@@ -12,7 +13,8 @@ function Search() {
   }
   // console.log(input)
   function handleClick() {
-    setStore(input)
+    setStore(input) 
+    navigate("/")
   }
 
   return (

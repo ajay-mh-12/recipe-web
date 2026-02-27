@@ -27,7 +27,7 @@ function RecipeCard(props) {
 
   return (
     <>
-      <div className="bg-[#5f2028] p-4 rounded-md flex flex-col justify-center">
+      <div className="bg-[#b22235] p-4 rounded-md flex flex-col justify-center">
         <div>
           <h2 className="items-center  font-bold mb-1 text-amber-50 lg:text-xs mb:text-base ">
             {props.name}

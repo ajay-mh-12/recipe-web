@@ -34,7 +34,7 @@ function App() {
           <storeContext.Provider value={{ store, setStore }}>
             <clickContext.Provider value={{ click, setClick, checkIsFav }}>
               <Routes>
-                <Route path="/" element={<Header />} />
+                <Route path="/" element={<Header/>} />
                 <Route path="/recipe/:id" element={<GetRecipe />} />
                 <Route
                   path="/favorite"
