@@ -42,49 +42,55 @@ function GetRecipe() {
     return <Loader/>
   }
   return (
-    <>
-      <div className="sticky top-0 z-100">
-        <HeaderMain />
-      </div>
-      <div className=" flex flex-col justify-center p-10 bg-[#972e56] m-6 w-[100] h-full ">
-        <h1 className="flex justify-center text-amber-200 font-semibold text-3xl mb-4 ">
+  <>
+    <div className="sticky top-0 z-[100]">
+      <HeaderMain />
+    </div>
+
+    <div className="pt-20 min-h-screen bg-[#b22235] p-6">
+      <div className="max-w-4xl mx-auto">
+
+        <h1 className="text-center text-amber-200 font-semibold text-3xl mb-6">
           {getId.strCategory}
         </h1>
+
         <div className="relative">
-          <div className="absolute right-1 top-1">
-            <button className="bg-amber-50 rounded-2xl ">
-              <img className="h-8.75" src={favoriteIcon} alt="favoriteIcon" />
-            </button>
-          </div>
+          <button className="absolute right-2 top-2 bg-amber-50 rounded-2xl p-1">
+            <img className="h-8" src={favoriteIcon} alt="favoriteIcon" />
+          </button>
+
           <img
-            className="w-[100] size-auto rounded-2xl"
+            className="w-full h-auto rounded-2xl outline-2 p-2"
             src={getId.strMealThumb}
             alt={getId.strMeal}
           />
         </div>
-        {ingredients.map((items, index) => (
-          <div
-            key={index}
-            className="flex justify-center items-center bg-black rounded-2xl mt-2 "
-          >
-            <ul>
-              <li className="text-amber-50 sm:text-2xl md:text-3xl lg:text-4xl">
-                {items.ingrdent} : {items.measure}
-              </li>
-            </ul>
-          </div>
-        ))}
-        <div className="">
-          <h3 className="font-semibold italic text-[18px] sm:text-[25px]  md:text-[35px] m-2 ">
-            Ingrediance-Instruction :
+
+        <ul className="space-y-2 mt-6">
+          {ingredients.map((items, index) => (
+            <li
+              key={index}
+              className="bg-black rounded-xl px-4 py-2 text-amber-50"
+            >
+              {items.ingrdent} : {items.measure}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6">
+          <h3 className="font-semibold italic text-xl md:text-2xl mb-2">
+            Ingredient Instruction :
           </h3>
-          <p className="text-amber-50 text-sm whitespace-pre-line ">
+
+          <p className="text-amber-50 whitespace-pre-line">
             {getId.strInstructions}
           </p>
         </div>
+
       </div>
-    </>
-  );
+    </div>
+  </>
+);
 }
 
 export default GetRecipe;

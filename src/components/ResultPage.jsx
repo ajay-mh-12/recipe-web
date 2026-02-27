@@ -12,9 +12,8 @@ function ResultPage() {
   const [error, setError] = useState("");
 
   // 🔹 Fetch random meals on first load
-  async function getRandomMeals(count = 18) {
-    setLoading(true);
-    setError("");
+   async function getProducts() {
+  
 
     try {
       const requests = Array.from({ length: count }, () =>
@@ -40,7 +39,7 @@ function ResultPage() {
 
     try {
       const response = await axios.get(
-       ` https://www.themealdb.com/api/json/v1/1/search.php?s=${store}`
+       `https://www.themealdb.com/api/json/v1/1/search.php?s=${store}`
       );
 
       setProducts(response.data.meals || []);
@@ -77,7 +76,7 @@ function ResultPage() {
   }
 
   // 🔹 No results UI
-  if (!loading && products.length === 0 && store) {
+  if (!loading && (!products || products.length === 0) && store) {
     return (
       <div className="text-center mt-10 text-gray-500">
         No recipes found for{" "}

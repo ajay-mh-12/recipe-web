@@ -1,10 +1,9 @@
-import { React } from 'react';
 import { useNavigate } from 'react-router-dom';
 function HeaderMain() {
     const navigator = useNavigate()
     return (
         <>
-        <div className="flex justify-between p-5 bg-[#972e56]  ">
+        <div className="flex justify-between p-5 bg-[#50464a]  ">
         <h2 className="font-semibold">Recipe Checker</h2>
         <nav>
           <ul className="flex gap-3 font-normal">
