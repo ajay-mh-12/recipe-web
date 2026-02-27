@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { data } from "react-router-dom";
-import Search from "../search";
-
 import { useContext } from "react";
 import {  searchContext, storeContext } from "../../../App";
 import Loader from "../../Loader/Loader";

@@ -2,8 +2,8 @@ import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import HeaderMain from "../HeaderMain/HeaderMain";
-import favoriteIcon from "../../../assets/Images/love-favorite-heart-svgrepo-com.svg";
-import Loader from "../../Loader/Loader";
+import favoriteIcon from "../../assets/Images/love-favorite-heart-svgrepo-com.svg";
+import Loader from "../Loader/Loader";
 
 function GetRecipe() {
   const { id } = useParams();

@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import searchImage from "../../assets/Images/search-svgrepo-com (2).svg";
-import { data } from "react-router-dom";
+import searchImage from "../assets/Images/search-svgrepo-com (2).svg";
 import { useContext } from "react";
-import { inputContext, storeContext } from "../../App";
+import { inputContext, storeContext } from "../App";
 function Search() {
   const {input,setInput} = useContext(inputContext);
   const {store,setStore} = useContext(storeContext)

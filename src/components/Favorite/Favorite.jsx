@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import HeaderMain from "../HeaderMain/HeaderMain";
-import { clickContext } from "../../../App";
-import RecipeCard from "../ResultPage/RecipeCard/RecipeCard";
+import { clickContext } from "../../App";
+import RecipeCard from "../Header/ResultPage/RecipeCard/RecipeCard";
 
 function Favorite({ recipes = [] }) {
   const { click } = useContext(clickContext);

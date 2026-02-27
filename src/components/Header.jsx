@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Search from "./search";
-import ResultPage from "./ResultPage/ResultPage";
+import Search from "../components/Search";
+import ResultPage from "./Header/ResultPage/ResultPage";
 import HeaderMain from "./HeaderMain/HeaderMain";
 useNavigate;
 function Header() {
