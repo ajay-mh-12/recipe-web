@@ -5,15 +5,14 @@ import ResultPage from "./ResultPage/ResultPage";
 import HeaderMain from "./HeaderMain/HeaderMain";
 useNavigate;
 function Header() {
-  const navigator = useNavigate();
   return (
     <>
-    <div className="sticky top-0 z-100">
-      <HeaderMain/>
-    </div>
+      <div className="sticky top-0 z-100">
+        <HeaderMain />
+      </div>
       <div className=" flex-col  w-full h-screen">
         <div className="flex justify-center my-4">
-           <Search /> 
+          <Search />
         </div>
         <div className="flex justify-center my-5">
           <h1 className="font-bold">Your Search Results:</h1>
@@ -25,4 +24,4 @@ function Header() {
     </>
   );
 }
-export default Header
+export default Header;

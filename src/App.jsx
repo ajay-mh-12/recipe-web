@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/header";
-import Search from "./components/header/search";
 import { createContext, useState } from "react";
 import GetRecipe from "./components/header/GetRecipe/GetRecipe";
 import Favorite from "./components/header/Favorite/Favorite";
