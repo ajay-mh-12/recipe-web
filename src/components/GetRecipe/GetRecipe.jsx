@@ -53,7 +53,7 @@ function GetRecipe() {
         <div className="relative">
           <div className="absolute right-1 top-1">
             <button className="bg-amber-50 rounded-2xl ">
-              <img className="h-[35px]" src={favoriteIcon} alt="favoriteIcon" />
+              <img className="h-8.75" src={favoriteIcon} alt="favoriteIcon" />
             </button>
           </div>
           <img

@@ -1,6 +1,4 @@
-import { React } from "react";
 import { useContext } from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loveIcon from "../../assets/Images/love-favorite-heart-svgrepo-com.svg";
 import fillLove from "../../assets/Images/heart-svgrepo-com.svg";
@@ -29,9 +27,9 @@ function RecipeCard(props) {
 
   return (
     <>
-      <div className="bg-[#b22236] p-4 rounded-md">
+      <div className="bg-[#b22236] p-4 rounded-md flex flex-col justify-center">
         <div>
-          <h2 className="items-center flex justify-center font-bold mb-1 text-amber-50 ">
+          <h2 className="items-center  font-bold mb-1 text-amber-50 lg:text-xs mb:text-base ">
             {props.name}
           </h2>
           <div className="relative">
