@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import {  searchContext, storeContext } from "../../../App";
-import Loader from "../../Loader/Loader";
+import {  searchContext, storeContext } from "../App";
+import Loader from "./Loader/Loader";
 import RecipeCard from "./RecipeCard/RecipeCard";
 
 function ResultPage() {

@@ -2,10 +2,10 @@ import { React } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import loveIcon from "../../../../assets/Images/love-favorite-heart-svgrepo-com.svg";
-import fillLove from "../../../../assets/Images/heart-svgrepo-com.svg";
-import { clickContext } from "../../../../App";
-import { STORAGE_FAV_MEALS } from "../../../../constants/Constants";
+import loveIcon from "../../assets/Images/love-favorite-heart-svgrepo-com.svg";
+import fillLove from "../../assets/Images/heart-svgrepo-com.svg";
+import { clickContext } from "../../App";
+import { STORAGE_FAV_MEALS } from "../../constants/Constants";
 function RecipeCard(props) {
   const { click, setClick, checkIsFav } = useContext(clickContext);
   const favorite = checkIsFav(props.id);
