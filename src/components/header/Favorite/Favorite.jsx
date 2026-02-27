@@ -6,12 +6,6 @@ import RecipeCard from "../ResultPage/RecipeCard/RecipeCard";
 function Favorite({ recipes = [] }) {
   const { click } = useContext(clickContext);
 
-  const favRecipes = recipes.filter((recipe) =>
-    click.includes(String(recipe.id)),
-  );
-
-  console.log("click:", click);
-  console.log({ click, favRecipes });
   console.log(typeof click);
 
   return (

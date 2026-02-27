@@ -5,22 +5,25 @@ import { useNavigate } from "react-router-dom";
 import loveIcon from "../../../../assets/Images/love-favorite-heart-svgrepo-com.svg";
 import fillLove from "../../../../assets/Images/heart-svgrepo-com.svg";
 import { clickContext } from "../../../../App";
+import { STORAGE_FAV_MEALS } from "../../../../constants/Constants";
 function RecipeCard(props) {
-  const [favorite, setFavorite] = useState(false);
-
-  const { click, setClick } = useContext(clickContext);
-
+  const { click, setClick, checkIsFav } = useContext(clickContext);
+  const favorite = checkIsFav(props.id);
   const navigate = useNavigate();
 
   function handleOnclick() {
-    setFavorite(!favorite);
-
     setClick((prev) => {
-      if (prev.includes(props.id)) {
-        return prev.filter((id) => id !== props.id);
+      let updateMeals;
+      const exists = prev.some((item) => item.id === props.id);
+      if (exists) {
+        updateMeals = prev.filter((meal) => meal.id !== props.id);
+      } else {
+        updateMeals = [...prev, props];
       }
+      console.log({ prev, props, click });
 
-      return [...prev, props];
+      localStorage.setItem(STORAGE_FAV_MEALS, JSON.stringify(updateMeals));
+      return updateMeals;
     });
   }
 

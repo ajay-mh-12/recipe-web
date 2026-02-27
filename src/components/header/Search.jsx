@@ -32,7 +32,7 @@ function Search() {
         >
           <img className="h-4 " src={searchImage} alt="searchingIcon" />
         </button>
-      </div>
+      </div>  
       
     </>
   );

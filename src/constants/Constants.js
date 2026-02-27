@@ -1,0 +1,1 @@
+export const STORAGE_FAV_MEALS = 'fav_meals';
