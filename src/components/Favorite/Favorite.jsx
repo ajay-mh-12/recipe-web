@@ -3,7 +3,7 @@ import HeaderMain from "../HeaderMain/HeaderMain";
 import { clickContext } from "../../App";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-function Favorite({ recipes = [] }) {
+function Favorite() {
   const { click } = useContext(clickContext);
 
   console.log(typeof click);

@@ -10,29 +10,12 @@ function ResultPage() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  // // 🔹 Fetch random meals on first load
-  //  async function getProducts() {
   
+    useEffect(() => {
+    getProducts(store);
+  }, [store]);
 
-  //   try {
-  //     const requests = Array.from({ length: count }, () =>
-  //       axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
-  //     );
-
-  //     const responses = await Promise.all(requests);
-  //     const meals = responses.map((res) => res.data.meals[0]);
-
-  //     setProducts(meals);
-  //   } catch (err) {
-  //     setError("Failed to load recipes");
-  //     setProducts([]);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
-
-  // 🔹 Fetch searched meals
+  //  Fetch searched meals
   async function getProducts() {
     setLoading(true);
     setError("");
@@ -51,35 +34,17 @@ function ResultPage() {
     }
   }
 
-  useEffect(() => {
-    getProducts(store);
-  }, [store]);
 
-  // async function getProducts() {
-  //   setLoading(true);
-  //   try {
-  //     const response = await axios.get(
-  //       `https://www.themealdb.com/api/json/v1/1/search.php?s=${store}`,
-  //     );
-  //     console.log(response);
-  //     setProducts(response.data.meals);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
-
-  // 🔹 Loader
+  // Loader
   if (loading) {
     return <Loader />;
   }
 
-  // 🔹 No results UI
+  //  No results UI
   if (!loading && (!products || products.length === 0) && store) {
     return (
       <div className="text-center mt-10 text-gray-500">
-        No recipes found for{" "}
+        No recipes found for
         <span className="font-semibold">"{store}"</span>
       </div>
     );
