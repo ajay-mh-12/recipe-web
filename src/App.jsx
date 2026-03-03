@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import GetRecipe from "./components/GetRecipe/GetRecipe.jsx";
 import Favorite from "./components/Favorite/Favorite.jsx";
 import { STORAGE_FAV_MEALS } from "./constants/Constants";
+
 
 export const searchContext = createContext();
 export const inputContext = createContext();
@@ -27,6 +28,7 @@ function App() {
       return false;
     }
   };
+   
   return (
     <>
       <searchContext.Provider value={{ products, setProducts }}>
@@ -34,7 +36,7 @@ function App() {
           <storeContext.Provider value={{ store, setStore }}>
             <clickContext.Provider value={{ click, setClick, checkIsFav }}>
               <Routes>
-                <Route path="/" element={<Header/>} />
+                <Route path="/" element={<Header />} />
                 <Route path="/recipe/:id" element={<GetRecipe />} />
                 <Route
                   path="/favorite"
